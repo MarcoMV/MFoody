@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">MyFoody</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string-array name="nav_options">
+        <item>Perfil</item>
+        <item>Recetas</item>
+        <item>Favoritos</item>
+        <item>Configuracion</item>
+    </string-array>
+    
+    <array name="navigation_iconos">
+        <item>@drawable/ic_action_good</item>
+        <item>@drawable/ic_action_cancel</item>
+        <item>@drawable/ic_action_favorite</item>
+        <item>@drawable/ic_action_settings</item>
+    </array>
+
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="blue">#af2c35aa</color>
+    <color name="oscuro">#424242</color>
+    <color name="letraList">#af00aa1c</color>
+    <color name="itm">#FAFAFA</color>
+</resources>

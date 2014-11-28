@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="white">#ffffff</color>
-    <color name="blue">#af2c35aa</color>
-    <color name="oscuro">#424242</color>
-    <color name="letraList">#af00aa1c</color>
+    <color name="blue">#0099CC</color>
+    <color name="pink">#ffac0282</color>
+    <color name="green">#af54aa00</color>
     <color name="itm">#FAFAFA</color>
+    <color name="black">#000000</color>
+    <color name="yellow">#ffd7da17</color>
+    <color name="orange">#ffda3200</color>
+    <color name="gray">#ff555550</color>
+    <color name="android">#99CC00</color>
+    <color name="rojo">#CC0000</color>
 </resources>

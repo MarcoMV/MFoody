@@ -2,18 +2,30 @@ package com.myfoody.contador.myfoody;
 
 
 import android.app.Activity;
+import android.app.Fragment;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import java.util.ArrayList;
+
+
+
 import java.util.List;
+import android.util.Log;
 
 
-public class MyActivity extends Activity {
+
+public class MyActivity extends ActionBarActivity  {
+
 
     private String[] titulos;
     private DrawerLayout NavDrawerLayout;
@@ -21,6 +33,9 @@ public class MyActivity extends Activity {
     private ArrayList<Item_objct> NavItms;
     private TypedArray NavIcons;
     NavigationAdapter NavAdapter;
+
+    //Parte 2
+    private ActionBarDrawerToggle mDrawerToggle;
 
 
     @Override
@@ -55,7 +70,50 @@ public class MyActivity extends Activity {
         NavAdapter=new NavigationAdapter(this,NavItms);
         NavList.setAdapter(NavAdapter);
 
+        //Parte 2
+        //Declaramos el mDrawerToggle y las ims a usar
+        mDrawerToggle = new ActionBarDrawerToggle(
+                this,                  /* host Activity */
+                NavDrawerLayout,         /* DrawerLayout object */
+                R.drawable.ic_drawer,  /* Icono de navegacion*/
+                R.string.app_name,  /* "open drawer" description */
+                R.string.hello_world  /* "close drawer" description */
+        ) {
 
+            /** Called when a drawer has settled in a completely closed state. */
+            public void onDrawerClosed(View view) {
+                Log.e("Cerrado completo", "!!");
+            }
+
+            /** Called when a drawer has settled in a completely open state. */
+            public void onDrawerOpened(View drawerView) {
+                Log.e("Apertura completa", "!!");
+            }
+        };
+        //Establecemos que mDrawerToggle declarado previamente sea el DrawerListener
+        NavDrawerLayout.setDrawerListener(mDrawerToggle);
+        //Establecemos que el ActonBar muestre el Boton Home
+
+        android.support.v7.app.ActionBar actionBar =getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        //Establecemos la accion al clickear sobre cualquier item del menu
+        //De la misma forma que haríamos en una app comun con un listview
+        NavList.setOnClickListener(new AdapterView.OnItemClickListener(){
+            @Override
+            public void onItemClick(AdapterView<?> arg0, View arg1, int position, long id){
+                MostrarFragment(position);
+            }
+        });
+
+        MostrarFRragment(1);
+
+    }
+    /*Pasando la posicion de la opcion en el menu nos motrara el Fragment correspondiente*/
+    private void MostrarFRragment(int position) {
+     //actualizar el contenido principal, sustituyendo los fragmentos
+        Fragment fragment=null;
+        switch ()
     }
 
 
